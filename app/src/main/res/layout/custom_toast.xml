@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Muhamad Syafii
+  ~ 30/3/2025 - muhamadsyafii4@gmail.com
+  ~ Copyright (c) 2025.
+  ~ All Rights Reserved
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:id="@+id/ConstraintToast"
+    android:background="?android:selectableItemBackground">
+
+  <com.google.android.material.card.MaterialCardView
+      android:id="@+id/mcvCard"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:cardBackgroundColor="#FCEDEC"
+      android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/ivIcon"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:src="@drawable/ic_wifi_off"/>
+
+      <TextView
+          android:id="@+id/tvMessage"
+          android:textSize="12sp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/ivIcon"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:textColor="#DE4841"
+          tools:text="Koneksi terputus. Cek sinyal kamu dan coba lagi, ya."/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

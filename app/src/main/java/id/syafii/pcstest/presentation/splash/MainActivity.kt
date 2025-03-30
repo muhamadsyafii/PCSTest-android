@@ -1,10 +1,17 @@
-package id.syafii.pcstest
+package id.syafii.pcstest.presentation.splash
+/*
+ * Created by Muhamad Syafii
+ * 30/3/2025 - muhamadsyafii4@gmail.com
+ * Copyright (c) 2025.
+ * All Rights Reserved
+ */
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import id.syafii.pcstest.R
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
