@@ -7,4 +7,8 @@
   <string name="text_error_connection">Koneksi terputus. Cek sinyal kamu dan coba lagi, ya.</string>
   <string name="text_error_server">Terjadi kesalahan server. Coba beberapa saat lagi, ya.</string>
 
+  <string name="label_profile">Profile</string>
+  <string name="label_my_name">Muhamad Syafii</string>
+  <string name="label_my_email">muhamadsyafii4@gmail.com</string>
+
 </resources>

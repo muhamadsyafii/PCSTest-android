@@ -5,6 +5,10 @@
     <item name="cornerSize">18%</item>
   </style>
 
+  <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+    <item name="cornerSize">50%</item>
+  </style>
+
 
   <style name="tv_semi_bold_16_black" parent="android:Widget.Material.TextView">
     <item name="android:textSize">16sp</item>
