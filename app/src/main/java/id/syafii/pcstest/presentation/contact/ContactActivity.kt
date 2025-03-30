@@ -1,6 +1,7 @@
 package id.syafii.pcstest.presentation.contact
 
 import android.os.Build.VERSION_CODES
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
@@ -13,8 +14,10 @@ import id.syafii.pcstest.databinding.ActivityContactBinding
 import id.syafii.pcstest.domain.model.Contact
 import id.syafii.pcstest.presentation.contact.adapter.ContactAdapter
 import id.syafii.pcstest.presentation.contact.detail.DetailContactActivity
+import id.syafii.pcstest.presentation.profile.ProfileActivity
 import id.syafii.pcstest.utils.ext.gone
 import id.syafii.pcstest.utils.ext.handleOnBackPress
+import id.syafii.pcstest.utils.ext.openActivity
 import id.syafii.pcstest.utils.ext.setupToolbar
 import id.syafii.pcstest.utils.ext.visibility
 import id.syafii.pcstest.utils.ext.visible
@@ -31,7 +34,6 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
   } }
 
   private fun handleItemClick(data: Contact) {
-    //TODO : still development
     startActivity(DetailContactActivity.newIntent(this@ContactActivity, data))
   }
 
@@ -87,7 +89,11 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
         toolbarBinding = icToolbar,
         title = getString(R.string.app_name),
         showBackButton = false,
-        showProfileIcon = true
+        showProfileIcon = true,
+        onProfileClick = {
+          openActivity(ProfileActivity::class.java)
+          Log.d("CheckButton", "initView: onProfileClick")
+        }
       )
 
       swipeRefresh.setOnRefreshListener {
