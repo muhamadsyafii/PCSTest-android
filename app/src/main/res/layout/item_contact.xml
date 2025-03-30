@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimens_6dp"
+    android:layout_marginHorizontal="@dimen/dimens_4dp"
+    android:clickable="true"
+    android:elevation="@dimen/dimens_1dp"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="@dimen/dimens_1dp"
+    >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"
+        />
+
+    <ImageView
+        android:id="@+id/iv_person"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="@dimen/dimens_120dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl_contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize18Percent"
+        app:srcCompat="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/tv_semi_bold_16_black"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimens_8dp"
+        android:drawablePadding="@dimen/dimens_6dp"
+        android:layout_marginBottom="@dimen/dimens_24dp"
+        android:maxEms="1"
+        android:maxLines="1"
+        app:drawableStartCompat="@drawable/ic_person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_contact"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Test Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_address"
+        style="@style/tv_medium_14_black"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimens_8dp"
+        android:layout_marginTop="@dimen/dimens_4dp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:drawablePadding="@dimen/dimens_6dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/gl_contact"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="Luciehaven"
+        />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

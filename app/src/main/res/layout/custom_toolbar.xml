@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Muhamad Syafii
+  ~ 30/3/2025 - muhamadsyafii4@gmail.com
+  ~ Copyright (c) 2025.
+  ~ All Rights Reserved
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+  <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:clickable="true"
+      android:focusable="true"
+      android:padding="8dp"
+      android:src="@drawable/ic_arrow_left_back"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:tint="@color/white"
+      />
+
+
+  <TextView
+      android:id="@+id/tv_title_toolbar"
+      style="@style/tv_semi_bold_16_black"
+      android:layout_width="@dimen/dimens_0dp"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="@dimen/dimens_8dp"
+      android:layout_toEndOf="@id/iv_back"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/iv_profile"
+      app:layout_constraintStart_toEndOf="@+id/iv_back"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="@string/app_name"
+      />
+
+
+  <ImageView
+      android:id="@+id/iv_profile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:clickable="true"
+      android:focusable="true"
+      android:padding="8dp"
+      android:src="@drawable/ic_person"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:tint="@color/white"
+      />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

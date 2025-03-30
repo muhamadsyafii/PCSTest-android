@@ -62,8 +62,7 @@ object NetworkModule {
 
   @Provides
   fun getRetrofit(client: OkHttpClient): Retrofit {
-//    val baseUrl = BuildConfig.BASE_URL
-    val baseUrl = ""
+    val baseUrl = "https://66b197c51ca8ad33d4f482c9.mockapi.io"
     return Retrofit.Builder()
       .baseUrl(baseUrl)
       .client(client)

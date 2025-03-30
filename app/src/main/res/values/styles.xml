@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="ShapeAppearanceOverlay.App.CornerSize18Percent" parent="">
+    <item name="cornerSize">18%</item>
+  </style>
+
+
+  <style name="tv_semi_bold_16_black" parent="android:Widget.Material.TextView">
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:fontFamily">@font/montserrat_semibold</item>
+  </style>
+
+  <style name="tv_regular_14_black" parent="android:Widget.Material.TextView">
+    <item name="android:textSize">@dimen/dimens_txt_14sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:fontFamily">@font/montserrat_regular</item>
+  </style>
+
+
+  <style name="tv_semi_bold_14_black" parent="android:Widget.Material.TextView">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:fontFamily">@font/montserrat_semibold</item>
+  </style>
+
+
+  <style name="tv_regular_12_black" parent="android:Widget.Material.TextView">
+    <item name="android:textSize">@dimen/dimens_txt_12sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:fontFamily">@font/montserrat_regular</item>
+  </style>
+
+  <style name="tv_medium_14_black" parent="android:Widget.Material.TextView">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:fontFamily">@font/montserrat_medium</item>
+  </style>
+
+
+</resources>
