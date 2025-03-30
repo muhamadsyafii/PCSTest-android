@@ -1,5 +1,7 @@
 package id.syafii.pcstest.domain.model
 
+import android.os.Parcelable
+
 /*
  * Created by Muhamad Syafii
  * 30/3/2025 - muhamadsyafii4@gmail.com
