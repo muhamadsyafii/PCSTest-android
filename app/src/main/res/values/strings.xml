@@ -2,4 +2,9 @@
   <string name="app_name">PCSTest</string>
 
   <string name="label_title_progress">Please wait…</string>
+
+  <!--Toast-->
+  <string name="text_error_connection">Koneksi terputus. Cek sinyal kamu dan coba lagi, ya.</string>
+  <string name="text_error_server">Terjadi kesalahan server. Coba beberapa saat lagi, ya.</string>
+
 </resources>

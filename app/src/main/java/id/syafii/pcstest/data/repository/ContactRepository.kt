@@ -1,11 +1,8 @@
-package id.syafii.pcstest.data.remote.api
+package id.syafii.pcstest.data.repository
 
 import id.syafii.pcstest.data.response.ContactResponse
-import retrofit2.http.GET
 
-interface PcsApi {
+interface ContactRepository {
 
-  @GET("/getData/test")
   suspend fun fetchContact() : List<ContactResponse>
-
 }

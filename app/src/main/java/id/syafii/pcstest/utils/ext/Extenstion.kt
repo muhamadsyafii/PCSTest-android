@@ -6,12 +6,20 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.snackbar.Snackbar
+import id.syafii.pcstest.R
 import id.syafii.pcstest.utils.network.toError
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 fun AppCompatActivity.showToast(message: String) {
@@ -99,3 +107,66 @@ fun <T> MutableLiveData<T>.toLiveData(): LiveData<T> = this
 fun <T> List<T>.toArrayList(): ArrayList<T> {
   return runCatching { toMutableList() as ArrayList<T> }.getOrElse { arrayListOf() }
 }
+
+fun View.showSnackBarInfo(
+  message: String?,
+  duration: Int = Snackbar.LENGTH_LONG,
+) {
+  val snackBar = Snackbar.make(this, message ?: "", duration)
+    .setBackgroundTint(ContextCompat.getColor(this.context, R.color.alert_info_background))
+    .setTextColor(ContextCompat.getColor(this.context, R.color.alert_info_text))
+  val snackBarView = snackBar.view
+
+  val textView =
+    snackBarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+
+  textView.maxLines = 4
+
+  snackBar.show()
+}
+
+fun View.showSnackBarError(
+  message: String?,
+  duration: Int = Snackbar.LENGTH_LONG,
+) {
+  val snackBar = Snackbar.make(this, message ?: "", duration)
+    .setBackgroundTint(
+      ContextCompat.getColor(
+        this.context,
+        R.color.alert_error_background
+      )
+    )
+    .setTextColor(
+      ContextCompat.getColor(
+        this.context,
+        R.color.alert_error_text
+      )
+    )
+  val snackBarView = snackBar.view
+
+  val textView =
+    snackBarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+
+  textView.maxLines = 4
+
+  snackBar.show()
+}
+
+fun AppCompatActivity.handleOnBackPress(exitMessage: String = "Press once again to close the app..", exitDelay: Long = 2000) {
+  var isExit = false
+  onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+    override fun handleOnBackPressed() {
+      if (isExit) {
+        finishAffinity()
+      } else {
+        isExit = true
+        showToast(exitMessage)
+        lifecycleScope.launch {
+          delay(exitDelay)
+          isExit = false
+        }
+      }
+    }
+  })
+}
+

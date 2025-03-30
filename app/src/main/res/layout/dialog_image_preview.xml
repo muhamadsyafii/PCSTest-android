@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Muhamad Syafii
+  ~ 30/3/2025 - muhamadsyafii4@gmail.com
+  ~ Copyright (c) 2025.
+  ~ All Rights Reserved
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    >
+
+  <io.getstream.photoview.PhotoView
+      android:id="@+id/photoView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:adjustViewBounds="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <ImageView
+      android:id="@+id/iv_close"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/dimens_8dp"
+      android:src="@drawable/ic_close_white"
+      android:layout_margin="@dimen/dimens_8dp"
+      android:clickable="true"
+      android:focusable="true"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

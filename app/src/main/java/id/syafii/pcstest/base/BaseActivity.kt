@@ -5,10 +5,17 @@ import android.text.SpannedString
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import id.syafii.pcstest.R
+import id.syafii.pcstest.utils.ext.showSnackBarError
 import id.syafii.pcstest.utils.loading.ProgressUtils
+import id.syafii.pcstest.utils.network.HttpError
 import id.syafii.pcstest.utils.network.NetworkUtil
+import id.syafii.pcstest.utils.network.NoInternetError
+import id.syafii.pcstest.utils.network.PcsResponse
+import id.syafii.pcstest.utils.network.TimeOutError
 import id.syafii.pcstest.utils.toast.ToastCustom
 import id.syafii.pcstest.utils.toast.ToastType.TOAST_ERROR_CONNECTION
+import id.syafii.pcstest.utils.toast.ToastType.TOAST_ERROR_DEFAULT
 
 /*
  * Created by Muhamad Syafii
@@ -88,5 +95,33 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(),
     }
   }
 
+  protected open fun handleError(error: PcsResponse.Error, usingDialog: Boolean = true) {
+    when (error) {
+      is HttpError -> {
+        if (error.message.isNotEmpty()) {
+          showToast(
+            typeToast = TOAST_ERROR_DEFAULT.string,
+            message = error.message
+          )
+        } else {
+          showToast(
+            typeToast = TOAST_ERROR_DEFAULT.string,
+            message = getString(R.string.text_error_server)
+          )
+        }
+      }
+
+      NoInternetError, TimeOutError -> {
+        showToast(
+          typeToast = TOAST_ERROR_CONNECTION.string,
+          message = getString(R.string.text_error_server)
+        )
+      }
+
+      else -> {
+        binding.root.showSnackBarError(message = error.message)
+      }
+    }
+  }
 
 }
