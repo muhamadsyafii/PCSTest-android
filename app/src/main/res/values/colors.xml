@@ -2,4 +2,24 @@
 <resources>
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
+
+
+  <!--SnackBar-->
+  <color name="alert_error_background">#F2DDDC</color>
+  <color name="alert_error_text">#E3655F</color>
+  <color name="alert_info_background">#EEFAF6</color>
+  <color name="alert_info_text">#3A9B7A</color>
+
+  <!--Toast-->
+  <color name="red_low">#FCEDEC</color>
+  <color name="green_granny_apple">#D5F5DC</color>
+  <color name="red">#FB0D0D</color>
+
+  <color name="colorPrimary">#3598DB</color>
+  <color name="colorPrimaryDark">#1A4463</color>
+  <color name="backgroundColor">#FFFFFF</color>
+  <color name="blue">#3598DB</color>
+  <color name="textColorPrimary">#212121</color>
+  <color name="textColorSecondary">#757575</color>
+
 </resources>
