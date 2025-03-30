@@ -63,7 +63,7 @@ object NetworkModule {
   @Provides
   fun getRetrofit(client: OkHttpClient): Retrofit {
 //    val baseUrl = BuildConfig.BASE_URL
-    val baseUrl = "https://kaleyo.loo.gs"
+    val baseUrl = ""
     return Retrofit.Builder()
       .baseUrl(baseUrl)
       .client(client)
