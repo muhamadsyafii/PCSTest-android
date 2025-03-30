@@ -16,3 +16,15 @@ fun ContactResponse.toContact() = Contact(
   street = street.orNull(),
   zipCode = zipCode.orNull(),
 )
+
+fun Contact.getFormattedAddress(): String {
+  return listOfNotNull(
+    street.takeIf { it.isNotBlank() },
+    addressNo.takeIf { it.isNotBlank() },
+    city.takeIf { it.isNotBlank() },
+    county.takeIf { it.isNotBlank() },
+    zipCode.takeIf { it.isNotBlank() },
+    country.takeIf { it.isNotBlank() }
+  ).joinToString(", ")
+}
+

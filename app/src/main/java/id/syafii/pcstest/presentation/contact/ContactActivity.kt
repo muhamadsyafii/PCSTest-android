@@ -1,6 +1,8 @@
 package id.syafii.pcstest.presentation.contact
 
+import android.os.Build.VERSION_CODES
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +12,7 @@ import id.syafii.pcstest.base.BaseActivity
 import id.syafii.pcstest.databinding.ActivityContactBinding
 import id.syafii.pcstest.domain.model.Contact
 import id.syafii.pcstest.presentation.contact.adapter.ContactAdapter
+import id.syafii.pcstest.presentation.contact.detail.DetailContactActivity
 import id.syafii.pcstest.utils.ext.gone
 import id.syafii.pcstest.utils.ext.handleOnBackPress
 import id.syafii.pcstest.utils.ext.setupToolbar
@@ -29,9 +32,15 @@ class ContactActivity : BaseActivity<ActivityContactBinding>() {
 
   private fun handleItemClick(data: Contact) {
     //TODO : still development
+    startActivity(DetailContactActivity.newIntent(this@ContactActivity, data))
   }
 
   private val viewModel: ContactViewModel by viewModels()
+
+  override fun onResume() {
+    super.onResume()
+    loadData()
+  }
 
   override fun subscribeToLiveData() {
     lifecycleScope.launch {

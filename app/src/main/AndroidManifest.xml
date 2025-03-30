@@ -19,6 +19,9 @@
       android:theme="@style/Theme.PCSTest"
       tools:targetApi="31">
     <activity
+        android:name=".presentation.contact.detail.DetailContactActivity"
+        android:exported="false" />
+    <activity
         android:name=".presentation.contact.ContactActivity"
         android:exported="false" />
     <activity
